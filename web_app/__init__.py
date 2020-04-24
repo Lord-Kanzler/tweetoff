@@ -22,7 +22,7 @@ def create_app():
     app.config["SECRET_KEY"] = SECRET_KEY
 
     #app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///web_app_11.db"
-    #app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////mnt/c/Github/DS-Unit-3-Sprint-3-Productization-and-Cloud/tweetoff/web_app_13.db"
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////mnt/c/Github/tweetoff/web_app_13.db"
 
     # configure the database
     app.config["SQALCHEMY_DATABASE_URL"] = DATABASE_URL
