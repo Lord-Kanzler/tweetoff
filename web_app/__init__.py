@@ -22,11 +22,11 @@ def create_app():
     app.config["SECRET_KEY"] = SECRET_KEY
 
     #app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///web_app_11.db"
-    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////mnt/c/Github/tweetoff/web_app_13.db"
+    #app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////mnt/c/Github/tweetoff/web_app_13.db"
 
     # configure the database
-    app.config["SQALCHEMY_DATABASE_URL"] = DATABASE_URL
-    app.config["SQALCHEMY_TRACK_MODIFICATIONS"] = False
+    app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
+    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.init_app(app)
     migrate.init_app(app, db)
 
