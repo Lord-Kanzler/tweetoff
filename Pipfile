@@ -14,10 +14,11 @@ scikit-learn = "*"
 python-dotenv = "*"
 requests = "*"
 basilica = "*"
-tweepy = "*"
+requests-oauthlib = "*"
+oauthlib = ">=4.0.0"
 flask = "*"
 flask-sqlalchemy = "*"
 flask-migrate = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.12"

@@ -21,7 +21,7 @@ def fetch_user_data(screen_name=None):
 
 
     # get existing user from the db or initialize a new one:
-    db_user = User.query.get(twitter_user.id) or User(id=twitter_user.id)
+    db_user = db.session.get(User, twitter_user.id) or User(id=twitter_user.id)
     db_user.screen_name = twitter_user.screen_name
     db_user.name = twitter_user.name
     db_user.location = twitter_user.location
@@ -45,8 +45,8 @@ def fetch_user_data(screen_name=None):
         print("----")
         #print(dir(status))
         # get existing tweet from the db or initialize a new one:
-        db_tweet = Tweet.query.get(status.id) or Tweet(id=status.id)
-        db_tweet.user_id = status.author.id  # or db_user.id
+        db_tweet = db.session.get(Tweet, status.id) or Tweet(id=status.id)
+        db_tweet.user_id = status.user.id  # or db_user.id
         db_tweet.full_text = status.full_text
         #embedding = basilica_client.embed_sentence(status.full_text, model="twitter") # todo: prefer to make a single request to basilica with all the tweet texts, instead of a request per tweet
         embedding = embeddings[counter]
